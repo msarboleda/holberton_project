@@ -1,0 +1,72 @@
+/* Holberton Requirements */
+body, main {
+    display: flex;
+}
+
+article, aside {
+    overflow-y: auto;
+}
+
+body {
+    flex-direction: column;
+}
+
+main {
+    flex: auto;
+    flex-direction: row;
+}
+
+article {
+    flex: 2;
+}
+
+aside {
+    flex: 1;
+}
+
+/* Personalization */
+
+a {
+    color: #e0003c;
+}
+
+.nav-item:hover {
+    display: inline-block;
+    color: #e0003c;
+    border-bottom: 1px solid #e0003c;
+    padding-bottom: 3px;
+}
+
+header div.row {
+    display: flex;
+}
+
+div.logo-area {
+    padding: 5px;
+}
+
+img.logo {
+    width: 85px;
+}
+
+article img {
+    margin-bottom: 25px;
+}
+
+footer a:hover {
+    color: #e0003c;
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #e0003c;
+}
