@@ -12,6 +12,7 @@
     <link href="https://www.holbertonschool.com/level2/holberton.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8.11.5/dist/sweetalert2.min.css">
     <script src="behavior.js"></script>
   </head>
   <body class="works_on_smartphone">
@@ -40,40 +41,30 @@
       <div id="fb-root"></div>
       
       <article>
-	<h1>Marlon Santiago Arboleda Londoño</h1>
-	<p>I'm a big tech enthusiast!</p>
-	<p>I love to learn something new every day, I always want to know how any object works or something else. My brain has become a dispenser of questions, which I have to solve in order to live in peace with myself; Being curious is my main characteristic, it has allowed me to explore different areas of technology, whether to learn or experiment.</p>
-	<p>I have programmed websites with HTML, CSS and JavaScript. I have also dedicated a great part of my life to study and practice <a href="https://php.net/">PHP</a> with different technologies, including some frameworks such as: <a href="https://laravel.com/">Laravel</a> & <a href="https://codeigniter.com/">CodeIgniter</a>.</p>
-
-	<p>Some of my interests:</p>
-	<ul>
-	  <li>DevOps</li>
-	  <li>Neural networks</li>
-	  <li>Artificial Intelligence</li>
-	  <li>Machine Learning & Deep Learning</li>
-	  <li>Data Science</li>
-	  <li>Big Data</li>
-	  <li>IT Security</li>
-	</ul>
-	
-	<p>My experience:</p>
-	<ul>
-	  <li><a href="https://www.vagrantup.com/">Vagrant</a>, is a tool for building and managing virtual machine environments in a single workflow.</li>
-	  <li>Breaking the keyboard in Linux/Unix shells with <i class="fas fa-heart"></i></li>
-	  <li><a href="https://git-scm.com/">Git</a>, is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</li>
-	  <li><a href="https://github.com/">GitHub</a> &amp; <a href="https://bitbucket.org/">Bitbucket</a>, are cloud-based services that help developers store and manage their code, as well as track and control changes to their code.</li>
-	  <li>Managing linux servers with <i class="fas fa-heart"></i></li>
-	</ul>
-
-	<p>My dream jobs:</p>
-	<ul>
-	  <li>Security Engineer</li>
-	  <li>DevOps Specialist</li>
-	  <li>Site Reliability Engineer</li>
-	  <li>Security Software Developer</li>
-	  <li>Full Stack Developer</li>
-	  <li>System Administrator</li>
-	</ul>
+	<h3>Contact me</h3>
+	<p>My email address is <strong>monoprosito@gmail.com</strong> in case you want to contact me, it is not the default address as you can try sending emails to other people through this platform.</p>
+	<p>Remember to check your spam folder, it is likely that the emails we send you are there.</p>
+	<p>Open them and mark the content as safe or remove the Spam tag.</p>
+	<p>Add <strong>monoprosito@gmail.com</strong> to your address book or add it to your contact list.</p>
+	<form>
+	  <div>
+	    <label for="name">Your Name (required)</label>
+	    <input type="text" id="name" name="name" required="" placeholder="Write your name" />
+	  </div>
+	  <div>
+	    <label for="email_to">Send email to (optional)</label>
+	    <input type="text" id="email_to" name="email_to" placeholder="Write to monoprosito@gmail.com if you want to contact me"/>
+	  </div>
+	  <div>
+	    <label for="subject">Subject (required)</label>
+	    <input type="text" id="subject" name="subject" required="" placeholder="Write a subject"/>
+	  </div>
+	  <div>
+	    <label for="body">Your Message (required)</label>
+	    <textarea id="body" name="body" rows="4" required="" placeholder="Write a message"></textarea>
+	  </div>
+	  <button id="send" type="button"><i class="fas fa-paper-plane"></i> Send</button>
+	</form>
       </article>
       <aside>
 	<h3>Random Unsplash Photo</h3>
@@ -91,6 +82,29 @@
     <script async src="https://platform.twitter.com/widgets.js"></script>
     <script src="facebook-sdk.js"></script>
     <script src="js/disqus.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.11.5/dist/sweetalert2.min.js"></script>
+    <script>
+      var $sendButton = document.getElementById("send");
+      
+      $sendButton.addEventListener("click", function() {
+        var email_to = document.getElementById("email_to").value;
+        var name = document.getElementById("name").value;
+        var subject = document.getElementById("subject").value;
+        var body = document.getElementById("body").value;
+        var modified_body = "Hello, how are you? " + name + " wants to talk to you and I send you the following message: <br><br>" + body;
+      
+        Email.send({
+          SecureToken: "542ee2c7-c376-4177-8c53-94641b8c7f53",
+          To : email_to,
+          From : "monoprosito@gmail.com",
+          Subject : subject,
+          Body : modified_body
+        }).then(
+          message => Swal.fire(message, 'Message sent successfully', 'success')
+        );
+      });
+    </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </body>
 </html>
