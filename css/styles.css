@@ -53,6 +53,11 @@ article img {
     margin-bottom: 25px;
 }
 
+article div.twitter-widget {
+    max-height: 400px;
+    margin-bottom: 20px;
+}
+
 footer a:hover {
     color: #e0003c;
 }
