@@ -4,6 +4,11 @@
     <title>My first project to Holberton School</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <meta property="og:url" content="http://52.91.216.8/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About me - Marlon Santiago Arboleda Londoño" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1122993401236992000/uKM3d6l1_400x400.png" />
     <link href="https://www.holbertonschool.com/level2/holberton.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
@@ -25,10 +30,16 @@
 	    <li><a class="nav-item" href="#">Contact me</a></li>
 	  </ul>
         </div>
+	<div class="right">
+	  <a href="https://twitter.com/intent/tweet?screen_name=msarboledal&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @msarboledal</a>
+	  <div class="fb-share-button" data-href="http://52.91.216.8/about.html" data-layout="button"></div>
+	</div>
       </div>
     </header>
     
     <main>
+      <div id="fb-root"></div>
+      
       <article>
 	<h1>Marlon Santiago Arboleda Londoño</h1>
 	<p>I'm a big tech enthusiast!</p>
@@ -78,6 +89,8 @@
      Made by <a href="https://twitter.com/msarboledal" target="_blank">Marlon Santiago Arboleda Londoño</a> for <a href="https://www.holbertonschool.com" target="_blank">Holberton School</a>.
     </footer>
 
+    <script async src="https://platform.twitter.com/widgets.js"></script>
+    <script src="facebook-sdk.js"></script>
     <script src="js/disqus.js"></script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </body>
